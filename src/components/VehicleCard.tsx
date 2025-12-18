@@ -7,7 +7,7 @@ interface VehicleCardProps {
 }
 
 export const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle }) => {
-    const whatsappLink = `https://wa.me/5493576414844?text=Hola, me interesa el ${vehicle.brand} ${vehicle.model} (ID: ${vehicle.id})`;
+    const whatsappLink = `https://wa.me/5493576414844?text=Hola, me interesa el ${vehicle.brand} ${vehicle.model} publicado en su sitio web.`;
 
     return (
         <motion.div
