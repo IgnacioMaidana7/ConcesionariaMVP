@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-trust-blue: #002B5B;
+  --color-slate-gray: #708090;
+  --color-action-orange: #EA580C;
+
+  --font-sans: Inter, Roboto, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
