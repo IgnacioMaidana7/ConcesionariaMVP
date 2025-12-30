@@ -1,6 +1,8 @@
-import { MessageCircle, Info, Gauge, Calendar } from 'lucide-react';
+import { MessageCircle, Info, Gauge, Calendar, CheckSquare, Square } from 'lucide-react';
 import { motion } from 'framer-motion';
 import type { Vehicle } from '../data/vehicles';
+import { useComparisonStore } from '../store/useComparisonStore';
+import { Link } from 'react-router-dom';
 
 interface VehicleCardProps {
     vehicle: Vehicle;
@@ -8,6 +10,8 @@ interface VehicleCardProps {
 
 export const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle }) => {
     const whatsappLink = `https://wa.me/5493576414844?text=Hola, me interesa el ${vehicle.brand} ${vehicle.model} publicado en su sitio web.`;
+    const { selectedVehicles, toggleVehicle } = useComparisonStore();
+    const isSelected = selectedVehicles.some(v => v.id === vehicle.id);
 
     return (
         <motion.div
@@ -16,7 +20,8 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle }) => {
             viewport={{ once: true }}
             whileHover={{ y: -5 }}
             transition={{ duration: 0.3 }}
-            className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 group"
+            className={`bg-white rounded-2xl shadow-lg overflow-hidden border transition-all duration-300 group relative ${isSelected ? 'border-trust-blue ring-2 ring-trust-blue/20' : 'border-gray-100'
+                }`}
         >
             <div className="relative h-56 overflow-hidden">
                 <img
@@ -27,6 +32,18 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle }) => {
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-trust-blue shadow-sm">
                     {vehicle.condition}
                 </div>
+
+                {/* Compare Checkbox */}
+                <button
+                    onClick={(e) => {
+                        e.preventDefault();
+                        toggleVehicle(vehicle);
+                    }}
+                    className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2 rounded-lg text-trust-blue shadow-sm hover:bg-trust-blue hover:text-white transition-colors flex items-center gap-2 cursor-pointer z-10"
+                >
+                    {isSelected ? <CheckSquare size={18} className="text-action-red" /> : <Square size={18} />}
+                    <span className="text-xs font-bold">{isSelected ? 'Comparar' : 'Comparar'}</span>
+                </button>
             </div>
 
             <div className="p-5">
@@ -38,7 +55,7 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle }) => {
                 </div>
 
                 <div className="flex items-center gap-2 mb-4">
-                    <span className="text-2xl font-bold text-action-orange">
+                    <span className="text-2xl font-bold text-action-red">
                         ${vehicle.price.toLocaleString()}
                     </span>
                 </div>
@@ -55,10 +72,13 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle }) => {
                 </div>
 
                 <div className="flex gap-3">
-                    <button className="flex-1 bg-trust-blue text-white py-2.5 rounded-xl font-medium flex items-center justify-center gap-2 hover:bg-blue-900 transition-colors">
+                    <Link
+                        to={`/vehicle/${vehicle.id}`}
+                        className="flex-1 bg-trust-blue text-white py-2.5 rounded-xl font-medium flex items-center justify-center gap-2 hover:bg-blue-900 transition-colors cursor-pointer"
+                    >
                         <Info size={18} />
                         Ver detalles
-                    </button>
+                    </Link>
                     <a
                         href={whatsappLink}
                         target="_blank"

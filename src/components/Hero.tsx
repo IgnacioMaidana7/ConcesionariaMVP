@@ -23,7 +23,7 @@ export const Hero = () => {
                     className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight"
                 >
                     Tu próximo vehículo <br />
-                    <span className="text-action-orange">te está esperando</span>
+                    <span className="text-action-red">te está esperando</span>
                 </motion.h1>
 
                 <motion.p
@@ -43,17 +43,17 @@ export const Hero = () => {
                     className="bg-white/10 backdrop-blur-md p-4 rounded-2xl max-w-3xl mx-auto border border-white/20 shadow-2xl"
                 >
                     <div className="flex flex-col md:flex-row gap-4">
-                        <select className="flex-1 bg-white/90 text-gray-900 h-12 rounded-lg params-select px-4 focus:ring-2 focus:ring-action-orange outline-none">
+                        <select className="flex-1 bg-white/90 text-gray-900 h-12 rounded-lg params-select px-4 focus:ring-2 focus:ring-action-red outline-none">
                             <option value="">Tipo de Vehículo</option>
                             <option value="auto">Auto</option>
                             <option value="moto">Moto</option>
                         </select>
-                        <select className="flex-1 bg-white/90 text-gray-900 h-12 rounded-lg px-4 focus:ring-2 focus:ring-action-orange outline-none">
+                        <select className="flex-1 bg-white/90 text-gray-900 h-12 rounded-lg px-4 focus:ring-2 focus:ring-action-red outline-none">
                             <option value="">Condición</option>
                             <option value="nuevo">Nuevo (0km)</option>
                             <option value="usado">Usado</option>
                         </select>
-                        <button className="bg-action-orange hover:bg-orange-600 text-white h-12 px-8 rounded-lg font-bold flex items-center justify-center gap-2 transition-all hover:scale-105">
+                        <button className="bg-action-red hover:bg-red-700 text-white h-12 px-8 rounded-lg font-bold flex items-center justify-center gap-2 transition-all hover:scale-105 cursor-pointer">
                             <Search size={20} />
                             Buscar
                         </button>

@@ -28,7 +28,7 @@ export const Catalog = () => {
                 {/* Filters */}
                 <div className="mb-10 flex flex-col md:flex-row justify-between items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100 gap-4">
                     <div className="flex items-center gap-2 text-gray-700 font-medium">
-                        <Filter size={20} className="text-action-orange" />
+                        <Filter size={20} className="text-action-red" />
                         <span>Filtrar por:</span>
                     </div>
 
@@ -67,7 +67,7 @@ export const Catalog = () => {
                         <p className="text-gray-500 text-lg">No se encontraron vehículos con esos filtros.</p>
                         <button
                             onClick={() => { setFilterType('all'); setFilterCondition('all'); }}
-                            className="mt-4 text-action-orange font-medium hover:underline"
+                            className="mt-4 text-action-red font-medium hover:underline cursor-pointer"
                         >
                             Limpiar filtros
                         </button>

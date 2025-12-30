@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter, MapPin, Phone, Mail, Car } from 'lucide-react';
+import { Facebook, Instagram, Twitter, MapPin, Phone, Mail } from 'lucide-react';
 
 export const Footer = () => {
     return (
@@ -8,20 +8,24 @@ export const Footer = () => {
                     {/* Brand */}
                     <div className="space-y-4">
                         <div className="flex items-center gap-2 text-trust-blue">
-                            <Car className="w-8 h-8 text-action-orange" />
-                            <span className="text-2xl font-bold tracking-tight">AutoElite</span>
+                            <img src="/src/assets/imgDOFFO.png" alt="DOFFO Automotores" className="h-10 w-auto object-contain brightness-0 invert filter" style={{ filter: 'invert(13%) sepia(31%) saturate(2852%) hue-rotate(206deg) brightness(91%) contrast(106%)' }} />
+                            {/* Using CSS filter to match trust-blue or just using text if simpler, but user asked for logo. 
+                                Since it's an image, I'll use the image. If it needs to be adapted for dark/light backgrounds, I'll handle it. 
+                                The footer has a light background (slate-50), so the original logo (likely dark text) should work. 
+                                Let's just use the image directly.
+                            */}
                         </div>
                         <p className="text-gray-500 leading-relaxed">
                             Líderes en venta de vehículos premium. Tu confianza es nuestro motor. Encontrá el auto de tus sueños hoy mismo.
                         </p>
                         <div className="flex gap-4">
-                            <a href="#" className="w-10 h-10 bg-white shadow-md rounded-full flex items-center justify-center text-gray-600 hover:text-action-orange hover:shadow-lg transition-all">
+                            <a href="#" className="w-10 h-10 bg-white shadow-md rounded-full flex items-center justify-center text-gray-600 hover:text-action-red hover:shadow-lg transition-all">
                                 <Instagram size={20} />
                             </a>
-                            <a href="#" className="w-10 h-10 bg-white shadow-md rounded-full flex items-center justify-center text-gray-600 hover:text-action-orange hover:shadow-lg transition-all">
+                            <a href="#" className="w-10 h-10 bg-white shadow-md rounded-full flex items-center justify-center text-gray-600 hover:text-action-red hover:shadow-lg transition-all">
                                 <Facebook size={20} />
                             </a>
-                            <a href="#" className="w-10 h-10 bg-white shadow-md rounded-full flex items-center justify-center text-gray-600 hover:text-action-orange hover:shadow-lg transition-all">
+                            <a href="#" className="w-10 h-10 bg-white shadow-md rounded-full flex items-center justify-center text-gray-600 hover:text-action-red hover:shadow-lg transition-all">
                                 <Twitter size={20} />
                             </a>
                         </div>
@@ -43,16 +47,16 @@ export const Footer = () => {
                         <h4 className="text-lg font-bold text-gray-900 mb-6">Contacto</h4>
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3 text-gray-600">
-                                <MapPin className="text-action-orange shrink-0 mt-1" size={20} />
+                                <MapPin className="text-action-red shrink-0 mt-1" size={20} />
                                 <span>Av. del Libertador 1234,<br />Vicente López, Buenos Aires</span>
                             </li>
                             <li className="flex items-center gap-3 text-gray-600">
-                                <Phone className="text-action-orange shrink-0" size={20} />
+                                <Phone className="text-action-red shrink-0" size={20} />
                                 <span>+54 11 1234-5678</span>
                             </li>
                             <li className="flex items-center gap-3 text-gray-600">
-                                <Mail className="text-action-orange shrink-0" size={20} />
-                                <span>contacto@autoelite.com</span>
+                                <Mail className="text-action-red shrink-0" size={20} />
+                                <span>contacto@doffoautomotores.com.ar</span>
                             </li>
                         </ul>
                     </div>
@@ -71,7 +75,7 @@ export const Footer = () => {
                 </div>
 
                 <div className="border-t border-gray-200 pt-8 text-center text-gray-500 text-sm">
-                    <p>&copy; {new Date().getFullYear()} AutoElite. Todos los derechos reservados.</p>
+                    <p>&copy; {new Date().getFullYear()} DOFFO Automotores. Todos los derechos reservados.</p>
                 </div>
             </div>
         </footer>

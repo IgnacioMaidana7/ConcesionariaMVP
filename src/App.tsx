@@ -1,20 +1,20 @@
-import { Header } from './components/Header';
-import { Hero } from './components/Hero';
-import { Catalog } from './components/Catalog';
-import { Appraisal } from './components/Appraisal';
-import { Footer } from './components/Footer';
+import { BrowserRouter, Routes, Route, } from 'react-router-dom';
+import { Home } from './pages/Home';
+import { VehicleDetail } from './pages/VehicleDetail';
+import { ScrollToTop } from './components/ScrollToTop';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-900">
-      <Header />
-      <main>
-        <Hero />
-        <Catalog />
-        <Appraisal />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      {/* ScrollToTop to ensure we start at top when navigating */}
+      <ScrollToTop />
+      <div className="min-h-screen bg-white font-sans text-gray-900 relative">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/vehicle/:id" element={<VehicleDetail />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

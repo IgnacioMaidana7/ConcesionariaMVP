@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-trust-blue: #002B5B;
-  --color-slate-gray: #708090;
-  --color-action-orange: #EA580C;
+  --color-trust-blue: #001A3D; /* Deep Navy Blue */
+  --color-slate-gray: #64748B;
+  --color-action-red: #D20000; /* Intense Red */
 
-  --font-sans: Inter, Roboto, sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', serif; /* Placeholder for logo-like serif */
 }
 
 @layer base {

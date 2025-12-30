@@ -11,12 +11,12 @@ export const Appraisal = () => {
                     {/* Text Content */}
                     <div className="flex-1">
                         <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-sm font-medium mb-6">
-                            <CheckCircle2 size={16} className="text-action-orange" />
+                            <CheckCircle2 size={16} className="text-action-red" />
                             <span>Cotización super rápida</span>
                         </div>
 
                         <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                            Cotizá tu usado y llevalo como <span className="text-action-orange">parte de pago</span>
+                            Cotizá tu usado y llevalo como <span className="text-action-red">parte de pago</span>
                         </h2>
 
                         <p className="text-gray-400 text-lg mb-8 max-w-xl">
@@ -65,7 +65,7 @@ export const Appraisal = () => {
                                 <input type="tel" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 outline-none focus:ring-2 focus:ring-trust-blue" placeholder="Ej: 11 1234-5678" />
                             </div>
 
-                            <button className="w-full bg-action-orange hover:bg-orange-600 text-white font-bold py-4 rounded-xl shadow-lg shadow-orange-500/30 flex items-center justify-center gap-2 transition-all hover:scale-[1.02] mt-2">
+                            <button className="w-full bg-action-red hover:bg-red-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-red-500/30 flex items-center justify-center gap-2 transition-all hover:scale-[1.02] mt-2 cursor-pointer">
                                 Cotizar Ahora
                                 <ArrowRight size={20} />
                             </button>
