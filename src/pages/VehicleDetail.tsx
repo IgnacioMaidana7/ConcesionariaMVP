@@ -1,12 +1,13 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState } from 'react';
-import { vehicles } from '../data/vehicles';
+import { useVehicleStore } from '../store/useVehicleStore';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { ArrowLeft, Calendar, Gauge, MessageCircle } from 'lucide-react';
 
 export const VehicleDetail = () => {
     const { id } = useParams<{ id: string }>();
+    const { vehicles } = useVehicleStore();
     const vehicle = vehicles.find(v => v.id === Number(id)); // Assuming ID is number
     const [paymentMethod, setPaymentMethod] = useState<'efectivo' | 'financiacion' | 'usado'>('efectivo');
 

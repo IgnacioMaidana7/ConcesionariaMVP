@@ -1,9 +1,10 @@
 import { useState, useMemo } from 'react';
 import { Filter } from 'lucide-react';
-import { vehicles } from '../data/vehicles';
+import { useVehicleStore } from '../store/useVehicleStore';
 import { VehicleCard } from './VehicleCard';
 
 export const Catalog = () => {
+    const { vehicles } = useVehicleStore();
     const [filterType, setFilterType] = useState<string>('all');
     const [filterCondition, setFilterCondition] = useState<string>('all');
 

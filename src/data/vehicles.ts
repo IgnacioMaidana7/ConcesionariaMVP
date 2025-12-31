@@ -8,6 +8,8 @@ export interface Vehicle {
     type: 'Auto' | 'Moto';
     condition: '0km' | 'Usado';
     image: string;
+    fuel?: string;
+    transmission?: string;
 }
 
 export const vehicles: Vehicle[] = [
